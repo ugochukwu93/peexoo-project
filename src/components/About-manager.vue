@@ -1,6 +1,6 @@
 <template>
-    <div class="about-manager-container">
-        <p class="hide">Hide</p>
+    <div class="about-manager-container" v-if="showBox">
+        <p @click="showBox = !showBox" class="hide">Hide</p>
         <img src="../assets/tim_mcbaj_53652000_2255623191378916_4966133143083590398_n.png" />
         <h1>Felix Nwadike</h1>
         <p class="about-text">I'm a wedding and portrait photographer based in Lagos, Nigeria. i'have been shooting wedding since i was in high school (before i ever had my driver's) </p>
@@ -39,7 +39,12 @@
 
 
 export default {
-    name: "AboutManager"
+    name: "AboutManager",
+    data: ()=> {
+        return {
+            showBox: true
+        }
+    }
         
     
 }
@@ -80,8 +85,8 @@ ul {
     height:649px;
     border-radius: 5px;
     background-color: #FFFFFF;
-    position: absolute;
-    top:116px;
+    position: relative; 
+    bottom:166px;
     left: 52px
 
 }
@@ -100,11 +105,7 @@ img {
     margin-right : 22px
 }
 
-.category-list{
-    /* margin-left: 35px;
-    margin-right: 34px; */
-    
-}
+/*  */
 .category-list li {
     padding-left:10px;
     list-style-type: none;

@@ -1,24 +1,36 @@
 <template>
+<v-app>
+  
+  <v-content>
   <div id="app">
    <Navbar/>
    <HeaderImg/>
-   <AboutManager/>
-
+   <SecondNav/>
+   <!-- <Homepage/> -->
+   <!-- <Projects/> -->
+   <router-view></router-view>
   </div>
+  </v-content>
+</v-app>
 </template>
 
 
 <script>
-import AboutManager from './components/About-manager.vue'
+// import Homepage from './components/Homepage'
 import HeaderImg from './components/Header-img.vue'
- import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
+import SecondNav from './components/second-nav'
+// import Projects from './components/Portfolio-projects'
 
 export default {
   name: 'App',
   components: {
+    SecondNav,
     Navbar,
     HeaderImg,
-    AboutManager,
+    // Homepage,
+    // Projects,
+    
     
    
   }
