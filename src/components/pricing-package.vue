@@ -5,56 +5,55 @@
             <AboutManager/>
         </div>
         <div class="packages-table">
-            <table>
-            <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Items</th>
-                <th>Date Created</th>
-                <th>Amount</th>
-            </tr>
-            <tr>
-                <td>Wedding Classic</td>
-                <td>Wedding</td>
-                <td>15</td>
-                <td>5th Sep,2020</td>
-                <td>N350,000</td>
-            </tr>
-            <tr>
-                <td>Beauty Campaign</td>
-                <td>Beauty</td>
-                <td>2</td>
-                <td>5th Sep,2020</td>
-                <td>N45,000</td>
-            </tr>
-            <tr>
-                <td>Prewedding Gold</td>
-                <td>Wedding</td>
-                <td>2</td>
-                <td>5th Sep,2020</td>
-                <td>N45,000</td>
-            </tr>
-            <tr>
-                <td>Culinary Photography</td>
-                <td>Food</td>
-                <td>18</td>
-                <td>5th Sep,2020</td>
-                <td>N75,000</td>
-            </tr>
-            </table>
+            <table id="firstTable">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Items</th>
+            <th>Date Created</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="row in rows" :key="row.id">
+        <td>{{row.title}}</td>
+        <td>{{row.category}}</td>
+        <td>{{row.items}}</td>
+        <td>{{row.date}}</td>
+        <td>{{row.amount}}</td>
+        </tr>
+
+    </tbody>
+    </table>
+ <!-- <TableDisplay/> -->
         </div>
+      
     </div>
     </div>
 </template>
 
 <script>
+// import TableDisplay from './Expand-project'
 import AboutManager from './About-manager'
 export default {
     name:"Package",
     components: {
-         AboutManager
+         AboutManager,
+        //  TableDisplay,
     },
-    
+    data() {
+      return {
+        displayBox: false,
+        rows: [
+      { id: 1, title: "Wedding Classic", category: 'Wedding', items: '15', date:"5th sep 2020", amount:'N350,000' },
+      { id: 2, title: "Beauty Campaign", category: 'Beauty', items: '2', date:"5th sep 2020", amount:'N45,000' },
+      { id: 3, title: "Prewedding Gold", category: 'Wedding', items: '2', date:"5th sep 2020", amount:'N45,000' },
+      { id: 4, title: "Culinary Photography", category: 'Food', items: '18', date:"5th sep 2020", amount:'N75,000' },
+      
+    ],
+      }
+    },
 }
 </script>
 
@@ -66,18 +65,18 @@ export default {
     
     .about-manager-container {
     border: 1px solid #FFB500;
-    width: 402px;
+    width: 385px;
     height:649px;
     border-radius: 5px;
     background-color: #FFFFFF;
-    position: relative; 
+    position: relative;  
     bottom:166px;
     left: 0px;
     margin-right: 16px
 }
 table{
     text-align: left;
-    width: 100%
+    width: 100%;
 }
 td, th {
   text-align: left;
@@ -88,6 +87,11 @@ td, th {
 }
 th {
     background-color: #FEF5E6;
+}
+
+.second-table{
+    width: 100%;
+    padding: 20px
 }
 
 

@@ -1,134 +1,72 @@
 <template>
 <div class="content">
-  <div>
-    
+    <div class='row'>
+    <img data-bs-toggle="modal" data-bs-target="#Backdrop"
+    v-for="getImage in getImages"
+          :key="getImage.id"
+    :src="getImage.src"
+    />
   </div>
-  <div class='photos'>
-  <img 
-  
-  v-for="getImage in getImages"
-        :key="getImage.id"
-  :src="getImage.src"
-  >
+  <Gmodal v-bind:getImages= "getImages"></Gmodal>
 </div>
-</div>
-
-
-
 </template>
  
 
 <script>
 
 
-
+import Gmodal from './G-modal';
 export default{
     name: "Gallery",
      components: {
-      
+       Gmodal,
      },
     data() {
       return {
+        
         getImages:[
          
           {
             id: 1,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+            src: require("../assets/peexoo1.jpeg")
           },
           {
             id: 2,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+            src: require("../assets/peexoo10.jpeg")
           },
           {
             id: 3,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+            src: require("../assets/peexoo2.jpeg")
           },
           {
             id: 4,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+            src: require("../assets/peexoo3.jpeg")
           },
           {
             id: 5,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+            src: require("../assets/peexoo4.jpeg")
           },
           {
             id: 6,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+            src: require("../assets/peexoo5.jpeg")
           },
           {
             id: 7,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+            src: require("../assets/peexoo6.jpeg")
           },
           {
             id: 8,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+            src: require("../assets/peexoo7.jpeg")
           },
           {
             id: 9,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
+            src: require("../assets/peexoo8.jpeg")
           },
           {
             id: 10,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
+            src: require("../assets/peexoo9.jpeg")
           },
-          {
-            id: 11,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
-          },
-          {
-            id: 12,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
-          },
-          {
-            id: 13,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJXWvDOHdWsW6I2ScQyANvAHhZUl3wusMrQ&usqp=CAU"
-          },
-          {
-            id: 14,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJXWvDOHdWsW6I2ScQyANvAHhZUl3wusMrQ&usqp=CAU"
-          },
-          {
-            id: 15,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJXWvDOHdWsW6I2ScQyANvAHhZUl3wusMrQ&usqp=CAU"
-          },
-         
-          {
-            id: 18,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVoB3a_65P1uEA5W3EgOyAsCbsmkTmtmVF8Q&usqp=CAU"
-          },
-         
-          {
-            id: 21,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzaWG99nIBPWAHfuFAaDXI1aRv1TlJopytXg&usqp=CAU"
-          },
-          {
-            id: 22,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7T7cUHc3qI_UrzrQbMkkvlvre8FwgaJzE_A&usqp=CAU"
-          },
-          {
-            id: 23,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTde5w-zAymks1-Bb6C05ScHKaxSaTjJwLUIg&usqp=CAU"
-          },
-          {
-            id: 24,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCN8jnvD5CDuvlpwAgvq0REkiNzfcq-Mampg&usqp=CAU"
-          },
-          {
-            id: 25,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzwwPXHQQNZ1GRAHZU17HZiap3BpCx8PZsiA&usqp=CAU"
-          },
-          {
-            id: 26,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ6Q_K6QTnOnoVxI_5h-aCH0jthEP4_CcBiQ&usqp=CAU"
-          },
-          {
-            id: 27,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO6zcJG7ZvdpqrXNrnsrfm8ODWUPDiNjRB0w&usqp=CAU"
-          },
-          {
-            id: 28,
-            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQf6asJa6sQXhlncfrddgTpCL3_qGegTRFmQ&usqp=CAU"
-          },
+          
         ]
       }
     },
@@ -144,31 +82,31 @@ export default{
 }
 </script>
 
-
 <style scoped>
-.content {
-  display: flex;
-  margin-left: 66px;
-  margin-right: 48px;
-  color:#FFFDF7
+
+.content{
+    position:relative; 
+    column-count:3;
+    padding: 20px;
+    margin-left: 66px;
+    margin-right: 48px;  
 }
-     .photos {
-       line-height: 0;
-      -webkit-column-count: 5;
-      -webkit-column-gap: 0px;
-      -moz-column-count: 5;
-      -moz-column-gap: 0px;
-      column-count: 5;
-      column-gap:  16px; 
-
-
-    } 
-    img {
-      margin-top: 27px;
-      border-radius:10px;
-      width: 100% ;
-      height: auto !important;
-       
-    }
-    
+.row {
+  margin-bottom: 10px;
+  /* overflow:hidden;  */
+}
+.row img {
+    margin-top: 8px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+/* img:hover{
+  border:3px solid #FFAA0A;
+}  */
 </style>

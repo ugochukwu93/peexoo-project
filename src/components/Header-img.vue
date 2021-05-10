@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <img src="../assets/Campaign.png" width="1230" height="165"/>
+    <div class="img">
+        
     </div>
 </template>
 
@@ -14,11 +14,17 @@ export default{
 </script>
 
 <style scoped>
-img {
+.img {
      border-radius: 5px;
      margin-left: 17px;
      margin-right: 33px;
      margin-top: 13px;
      position: relative;
+     background-size: cover;
+     height: 165px;
+     width: 1230px;
+     background-image: url("../assets/peexoo8.jpeg");
+     background-position: center;
 }
+
 </style>

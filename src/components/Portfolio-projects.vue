@@ -27,13 +27,23 @@
                     </div>
                     <p>You have seen shoots with colorful backgrounds and more often than not the backgrounds are savage widetone colored Paper Seamless backdrops or a white backdrop is lit with strobes and coloured gets</p>
 
-                    <p class="expand-btn">Expand Project</p>
+                    <p @click="showBox =!showBox" class="expand-btn">{{name}}</p>
+                    
                 
             </div>
         </div>
+ 
+        <div class="row" v-if="showBox">
+                <img 
+                    v-for="Image in Images"
+                    :key="Image.id"
+                    :src="Image.src"
+            />
+           
+        </div>
         <div class="projects">
             <div>
-                <img src="https://bloximages.newyork1.vip.townnews.com/miamitimesonline.com/content/tncms/assets/v3/editorial/d/7d/d7d5e48e-7c3e-11eb-8408-2feb026c5056/603fbb82a63c8.image.jpg"  width="374" height="283">
+                <img src="../assets/peexoo4.jpeg"  width="374" height="283">
             </div>
             <div>
                 <h2>Dinner with Moet & His</h2>
@@ -99,10 +109,62 @@ export default {
      components: {
          AboutManager
     },
-    setup() {
-        
+    data() {
+      return {
+        name:"Expand Project",
+        showBox: false,
+        Images:[
+         
+          {
+            id: 1,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+          },
+          {
+            id: 2,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+          },
+          {
+            id: 3,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+          },
+          {
+            id: 4,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQudx1TsPsaA3-mEJi5OlVUNvGVtF2aX-0tbA&usqp=CAU"
+          },
+          {
+            id: 5,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+          },
+          {
+            id: 6,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+          },
+          {
+            id: 7,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+          },
+          {
+            id: 8,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbG0DNfCqEl0RwzNQb11QUG4Edsna7ESCsg&usqp=CAU"
+          },
+          {
+            id: 9,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
+          },
+          {
+            id: 10,
+            src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxAJcSQRs2u2vkyS5GoKLm66Op0CqWt0rjg&usqp=CAU"
+          },
+        ]
+      }
     },
-}
+    methods: {
+       change: function(){
+            this.$emit('changeTitle', 'Close Project')
+        }
+    }
+    
+}   
 </script>
 
 <style scoped>
@@ -131,7 +193,8 @@ span {
     font-weight: bold
 }
 .project-container {
-    display: flex
+    background-color:#FFFDF7;
+    display: flex;
 }
 .portfolio-project {
     margin-left: 66px
@@ -146,6 +209,41 @@ img {
 }
 .expand-btn{
     color:#E39400;
+    cursor:pointer;
 }
 
+.row {
+    display:grid;
+    gap:2px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 169px 269px 169px;
+    margin: 30px auto 80px ;
+    max-width: 80vw;
+}
+
+.row img:nth-child(2) {
+    grid-column: auto / span 2;
+}
+.row img:nth-child(3) {
+    grid-column: auto / span 2;
+    grid-row: 20px / span 3
+}
+
+.row img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius:20px
+}
+.about-manager-container {
+    border: 1px solid #FFB500;
+    width: 380px;
+    height:649px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    position: relative; 
+    bottom:166px;
+    left: 52px
+
+}
 </style>

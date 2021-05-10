@@ -42,13 +42,13 @@ export default {
 <style scoped>
 li {
     color: #4D4D4D;
-    font-family: "Eudoxus Sans,regular"
+    font-family: "Eudoxus Sans,regular";
 }
     #nav {
         width: 1280px;
         height: 70px;
         color: #FFFFFF;
-        box-shadow: #00000029 0px 1px 3px ;
+        box-shadow: #00000029 0px 1px 3px;
 
     }
     #li-first {
@@ -79,6 +79,6 @@ li {
         margin-right: 61px;
         margin-left: 124px;
         margin-top: 4px;
-        
     }
+    
 </style>
